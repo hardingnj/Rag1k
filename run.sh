@@ -3,14 +3,12 @@
 # (to use xhost you will need to run xhost+, see warnings
 # about insecurity.)
 
-biipy_version=v0.7
-#docker pull cggh/biipy:${biipy_version}
+version=v0.1
 XSOCK=/tmp/.X11-unix/X0
 docker run -d \
-  -v ${HOME}:/home \
-  -v /data:/data \
+  -v ${HOME}/git:/home/git \
   -v $XSOCK:$XSOCK \
   -p 31555:8888 \
-  --name rtest \
-  -e "docker_image=$biipy_version" \
-  rtest
+  --name rag1k \
+  -e "docker_image=$version" \
+  rag1k
