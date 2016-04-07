@@ -8,7 +8,7 @@ XSOCK=/tmp/.X11-unix/X0
 docker run -d \
   -v ${HOME}/git:/home/git \
   -v $XSOCK:$XSOCK \
-  -p 31555:8888 \
+  -p 8787:8888 \
   --name rag1k \
   -e "docker_image=$version" \
   rag1k
